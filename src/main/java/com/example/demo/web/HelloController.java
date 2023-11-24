@@ -1,5 +1,6 @@
 package com.example.demo.web;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,5 +34,11 @@ public class HelloController {
 	public String submitForm(@RequestParam String firstname, @RequestParam String lastname ) {
 		return "<h2>Form Submitted</h2>" + firstname + " " + lastname;
 	}
+	
+	@RequestMapping("/orders/{id}")
+	public String getOrders(@PathVariable String id) {
+		return "order id : " + id;
+	}
+
 }
 
