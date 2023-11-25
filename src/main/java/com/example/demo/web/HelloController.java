@@ -44,8 +44,8 @@ public class HelloController {
 
 
 	@RequestMapping("/orders/{userId}/invoices")
-	public String getInvoices(@PathVariable int userId, @RequestParam(value="date") Date date ) {
-		return "invoice found for user : " + userId;
+	public String getInvoices(@PathVariable int userId, @RequestParam(value="date", required=false) Date dateOrNull ) {
+		return "invoice found for user : " + userId + " on " + dateOrNull;
 	}
 }
 
