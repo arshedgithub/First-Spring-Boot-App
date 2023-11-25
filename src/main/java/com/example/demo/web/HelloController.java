@@ -1,5 +1,7 @@
 package com.example.demo.web;
 
+import java.util.Date;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,5 +42,10 @@ public class HelloController {
 		return "order id : " + id;
 	}
 
+
+	@RequestMapping("/orders/{userId}/invoices")
+	public String getInvoices(@PathVariable int userId, @RequestParam(value="date") Date date ) {
+		return "invoice found for user : " + userId;
+	}
 }
 
